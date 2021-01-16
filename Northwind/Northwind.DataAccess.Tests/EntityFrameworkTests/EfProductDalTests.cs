@@ -5,7 +5,7 @@ using System;
 namespace Northwind.DataAccess.Tests.EntityFrameworkTests
 {
     [TestClass]
-    public class EfProductDalTest
+    public class EfProductDalTests
     {
         [TestMethod]
         public void Get_list_returns_all_products()

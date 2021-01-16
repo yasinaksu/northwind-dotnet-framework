@@ -79,10 +79,10 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFrameworkTests\EfCategoryDalTest.cs" />
-    <Compile Include="EntityFrameworkTests\EfProductDalTest.cs" />
-    <Compile Include="NHibernateTests\NhCategoryDalTest.cs" />
-    <Compile Include="NHibernateTests\NhProductDalTest.cs" />
+    <Compile Include="EntityFrameworkTests\EfCategoryDalTests.cs" />
+    <Compile Include="EntityFrameworkTests\EfProductDalTests.cs" />
+    <Compile Include="NHibernateTests\NhCategoryDalTests.cs" />
+    <Compile Include="NHibernateTests\NhProductDalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
