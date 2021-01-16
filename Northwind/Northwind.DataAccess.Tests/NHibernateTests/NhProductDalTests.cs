@@ -11,7 +11,7 @@ namespace Northwind.DataAccess.Tests.NHibernateTests
     /// Summary description for NhProductDal
     /// </summary>
     [TestClass]
-    public class NhProductDalTest
+    public class NhProductDalTests
     {
         [TestMethod]
         public void Get_list_returns_all_products()
