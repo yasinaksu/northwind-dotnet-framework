@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aspects\Postsharp\Validation\FluentValidationAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
     <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />
     <Compile Include="DataAccess\EntityFramework\EfQueryableRepository.cs" />
