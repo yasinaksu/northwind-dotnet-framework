@@ -31,5 +31,10 @@ namespace Northwind.Business.Concrete.Managers
         {
             return _productDal.Get(p => p.ProductId == id);
         }
+
+        public Product Update(Product product)
+        {
+            return _productDal.Update(product);
+        }
     }
 }
