@@ -1,4 +1,5 @@
 ﻿using Core.CrossCuttingConcerns.Validation.FluentValidation;
+using Core.Utilities.Messages;
 using FluentValidation;
 using PostSharp.Aspects;
 using System;
@@ -20,6 +21,10 @@ namespace Core.Aspects.Postsharp.ValidationAspects
 
         public override void OnEntry(MethodExecutionArgs args)
         {
+            if (!typeof(IValidator).IsAssignableFrom(_validatorType))
+            {
+                throw new Exception(AspectMessages.WrongValidationType);
+            }
             var validator = Activator.CreateInstance(_validatorType) as IValidator;
             var entityType = _validatorType.BaseType.GetGenericArguments()[0];
             var entities = args.Arguments.Where(t => t.GetType() == entityType);
