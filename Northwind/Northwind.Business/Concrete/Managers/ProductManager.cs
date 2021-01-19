@@ -1,7 +1,9 @@
 ﻿using Core.Aspects.Postsharp.CacheAspects;
+using Core.Aspects.Postsharp.LogAspects;
 using Core.Aspects.Postsharp.TransactionAspects;
 using Core.Aspects.Postsharp.ValidationAspects;
 using Core.CrossCuttingConcerns.Caching.Microsoft;
+using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using Northwind.Business.Abstract;
 using Northwind.Business.ValidationRules.FluentValidation;
 using Northwind.DataAccess.Abstract;
@@ -30,7 +32,8 @@ namespace Northwind.Business.Concrete.Managers
             return _productDal.Add(product);
         }
 
-        [CacheAspect(typeof(MemoryCacheManager),60)]
+        [CacheAspect(typeof(MemoryCacheManager), 60)]
+        [LogAspect(typeof(DatabaseLogger))]
         public List<Product> GetAll()
         {
             return _productDal.GetList();

@@ -8,6 +8,7 @@ namespace Core.Utilities.Messages
 {
     public static class AspectMessages
     {
+        public static readonly string WrongLoggerType = "Wrong logger type";
         public static string WrongCacheType = "Wrong cache type";
         public static string WrongValidationType = "Wrong Validation Type";
     }
