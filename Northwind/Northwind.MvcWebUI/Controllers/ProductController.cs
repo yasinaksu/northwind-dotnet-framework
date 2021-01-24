@@ -52,7 +52,7 @@ namespace Northwind.MvcWebUI.Controllers
                 ProductId = 79,
                 CategoryId = 1,
                 ProductName = "Transaction Demo-1",
-                UnitsInStock = 1,
+                UnitsInStock = -1,
                 UnitPrice = 10
             };
             _productService.TransactionalOperation(product1, product2);
