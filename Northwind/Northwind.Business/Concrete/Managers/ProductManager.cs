@@ -17,6 +17,7 @@ using System.Transactions;
 
 namespace Northwind.Business.Concrete.Managers
 {
+
     public class ProductManager : IProductService
     {
         private readonly IProductDal _productDal;
@@ -25,16 +26,14 @@ namespace Northwind.Business.Concrete.Managers
             _productDal = productDal;
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [FluentValidationAspect(typeof(ProductValidator), AspectPriority = 2)]
+        [CacheRemoveAspect(typeof(MemoryCacheManager), AspectPriority = 3)]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
 
-        [CacheAspect(typeof(MemoryCacheManager), 60)]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
+        [CacheAspect(typeof(MemoryCacheManager), 60, AspectPriority = 3)]
         public List<Product> GetAll()
         {
             return _productDal.GetList();
@@ -47,14 +46,15 @@ namespace Northwind.Business.Concrete.Managers
         }
 
         [TransactionScopeAspect]
+        [FluentValidationAspect(typeof(ProductValidator))]
         public void TransactionalOperation(Product product1, Product product2)
         {
             _productDal.Add(product1);
             _productDal.Update(product2);
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [FluentValidationAspect(typeof(ProductValidator), AspectPriority = 1)]
+        [CacheRemoveAspect(typeof(MemoryCacheManager), AspectPriority = 2)]
         public Product Update(Product product)
         {
             return _productDal.Update(product);

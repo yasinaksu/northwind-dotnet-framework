@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Core.Aspects.Postsharp.CacheAspects
 {
+    [LinesOfCodeAvoided(0)]
     [Serializable]
     public class CacheAspect : MethodInterceptionAspect
     {

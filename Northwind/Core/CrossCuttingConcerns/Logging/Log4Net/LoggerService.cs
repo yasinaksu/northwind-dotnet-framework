@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.CrossCuttingConcerns.Logging.Log4Net
 {
+    [Serializable]
     public class LoggerService
     {
         private readonly ILog _log;

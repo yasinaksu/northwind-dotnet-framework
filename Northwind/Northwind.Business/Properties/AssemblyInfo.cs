@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using Core.Aspects.Postsharp.LogAspects;
+using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -13,6 +15,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: LogAspect(typeof(FileLogger), AspectPriority = 1,AttributeTargetTypes = "Northwind.Business.Concrete.Managers.*")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
