@@ -1,4 +1,5 @@
-﻿using Core.Aspects.Postsharp.CacheAspects;
+﻿using Core.Aspects.Postsharp.AuthorizationAspects;
+using Core.Aspects.Postsharp.CacheAspects;
 using Core.Aspects.Postsharp.LogAspects;
 using Core.Aspects.Postsharp.PerformanceAspects;
 using Core.Aspects.Postsharp.TransactionAspects;
@@ -35,6 +36,7 @@ namespace Northwind.Business.Concrete.Managers
             return _productDal.Add(product);
         }
 
+        [SecuredOperation(Roles = "Product.List")]
         [CacheAspect(typeof(MemoryCacheManager), 60, AspectPriority = 3)]
         [PerformanceCounterAspect(2)]
         public List<Product> GetAll()
