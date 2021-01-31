@@ -43,5 +43,10 @@ namespace Core.CrossCuttingConcerns.Security.Web
             stringBuilder.Append(id);
             return stringBuilder.ToString();
         }
+
+        public static void Logout()
+        {
+            FormsAuthentication.SignOut();
+        }
     }
 }

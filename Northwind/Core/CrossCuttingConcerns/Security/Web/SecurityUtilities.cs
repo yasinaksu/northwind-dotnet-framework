@@ -9,7 +9,7 @@ namespace Core.CrossCuttingConcerns.Security.Web
 {
     public class SecurityUtilities
     {
-        public static Identity FormsAuthTicketToIdentity(FormsAuthenticationTicket ticket)
+        public Identity FormsAuthTicketToIdentity(FormsAuthenticationTicket ticket)
         {
             var identity = new Identity
             {

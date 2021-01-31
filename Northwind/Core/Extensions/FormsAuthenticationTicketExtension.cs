@@ -10,7 +10,7 @@ namespace Core.Extensions
 {
     public static class FormsAuthenticationTicketExtension
     {
-        public static Identity FormsAuthTicketToIdentity(this FormsAuthenticationTicket ticket)
+        public static Identity ToIdentity(this FormsAuthenticationTicket ticket)
         {
             var identity = new Identity
             {

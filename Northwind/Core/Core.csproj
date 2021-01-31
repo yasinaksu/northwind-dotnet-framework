@@ -126,6 +126,7 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLogEvent.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogDetail.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogParameter.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Hashing\HashingHelper.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Identity.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Web\AuthenticationHelper.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Web\SecurityUtilities.cs" />
@@ -137,6 +138,9 @@
     <Compile Include="DataAccess\NHibernate\NhEntityRepositoryBase.cs" />
     <Compile Include="DataAccess\NHibernate\NHibernateHelper.cs" />
     <Compile Include="DataAccess\NHibernate\NhQueryableRepository.cs" />
+    <Compile Include="Entities\Concrete\OperationClaim.cs" />
+    <Compile Include="Entities\Concrete\User.cs" />
+    <Compile Include="Entities\Concrete\UserOperationClaim.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Extensions\FormsAuthenticationTicketExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

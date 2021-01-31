@@ -44,6 +44,8 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Dtos\ProductDto.cs" />
+    <Compile Include="Dtos\UserForLoginDto.cs" />
+    <Compile Include="Dtos\UserForRegisterDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

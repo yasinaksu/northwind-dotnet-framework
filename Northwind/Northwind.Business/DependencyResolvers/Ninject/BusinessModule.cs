@@ -23,6 +23,11 @@ namespace Northwind.Business.DependencyResolvers.Ninject
             Bind<IProductService>().To<ProductManager>().InSingletonScope();
             Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
 
+            Bind<IUserService>().To<UserManager>().InSingletonScope();
+            Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
+            Bind<IAuthService>().To<AuthManager>().InSingletonScope();
+
+
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>)).InSingletonScope();
             Bind<DbContext>().To<NorthwindContext>().InSingletonScope();
             Bind<NHibernateHelper>().To<SqlServerHelper>().InSingletonScope();
