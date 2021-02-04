@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Core.Entities.Concrete;
+using FluentValidation;
 using Ninject.Modules;
 using Northwind.Business.ValidationRules.FluentValidation;
 using Northwind.Entities.Concrete;
@@ -15,6 +16,7 @@ namespace Northwind.Business.DependencyResolvers.Ninject
         public override void Load()
         {
             Bind<IValidator<Product>>().To<ProductValidator>().InSingletonScope();
+            Bind<IValidator<User>>().To<UserValidator>().InSingletonScope();
         }
     }
 }

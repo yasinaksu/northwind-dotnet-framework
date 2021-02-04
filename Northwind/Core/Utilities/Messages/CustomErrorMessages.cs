@@ -10,5 +10,6 @@ namespace Core.Utilities.Messages
     {
         public static string NoControllerFound = "No controller found";
         public static string TypeDoesNotSubclassControllerBase = "Type does not subclass of ControllerBase";
+        public static string TypeDoesNotSubclassValidatorBase = "Type does not subclass of ValidatorBase";
     }
 }
